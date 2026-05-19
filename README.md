@@ -36,10 +36,13 @@ Three roles. One platform. Zero friction.
 
 ## 🛠️ Tech Stack
 
-* **🖥️ Backend:** Flask (Python)
-* **🗄️ Database:** MySQL via SQLAlchemy + PyMySQL
-* **🔐 Auth:** Werkzeug password hashing + Flask sessions
-* **🎨 Frontend:** Jinja2 templates + custom CSS
+
+| Layer | Technology |
+| :--- | :--- |
+| **Backend** | Flask (Python) |
+| **Database** | MySQL _(via SQLAlchemy + PyMySQL)_ |
+| **Auth** | Werkzeug password hashing + Flask sessions |
+| **Frontend** | Jinja2 templates + custom CSS |
 
 
 ---
