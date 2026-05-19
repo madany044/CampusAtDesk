@@ -61,15 +61,6 @@ Visit `http://127.0.0.1:5001` — log in or register to get started.
 
 ---
 
-## Default Roles
 
-Register normally to get a **student** account.  
-Admins and recruiters are assigned via the admin panel or directly in the database.
-
-```sql
-UPDATE users SET role = 'admin' WHERE email = 'your@email.com';
-```
-
----
 
 > *Developed & Designed by **Madan Y***
