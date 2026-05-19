@@ -26,7 +26,7 @@ Three roles. One platform. Zero friction.
 
 - 🔐 Secure authentication with hashed passwords and session management
 - 🎭 Role-based access control — every page knows who belongs there
-- 🌿 Branch-wise student filtering (CSE / ME / CE)
+- 🌿 Branch-wise student filtering 
 - 📄 Resume upload support for job applications
 - 🏷️ Job categorization for easier discovery
 - 🏗️ Company and recruiter management from admin panel
@@ -34,12 +34,13 @@ Three roles. One platform. Zero friction.
 
 ---
 
-## Tech Stack
+## 🛠️ Tech Stack
 
-Backend     Flask (Python)
-Database    MySQL via SQLAlchemy + PyMySQL
-Auth        Werkzeug password hashing + Flask sessions
-Frontend    Jinja2 templates + custom CSS
+* **🖥️ Backend:** Flask (Python)
+* **🗄️ Database:** MySQL via SQLAlchemy + PyMySQL
+* **🔐 Auth:** Werkzeug password hashing + Flask sessions
+* **🎨 Frontend:** Jinja2 templates + custom CSS
+
 
 ---
 
