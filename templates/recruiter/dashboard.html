@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}Recruiter Dashboard - Job Board & Career Portal{% endblock %}
+
+{% block content %}
+<h1>Recruiter Dashboard</h1>
+
+{% if company %}
+<div class="card">
+    <div class="card-header">Assigned Company</div>
+    <div class="card-body">
+        <p><strong>ID:</strong> {{ company.id }}</p>
+        <p><strong>Name:</strong> {{ company.name }}</p>
+        <p><strong>Location:</strong> {{ company.location or '-' }}</p>
+    </div>
+</div>
+{% else %}
+<div class="card">
+    <div class="card-body">
+        <p>No company assigned.</p>
+    </div>
+</div>
+{% endif %}
+
+<div class="admin-stats">
+    <div class="admin-stat-card">
+        <h3>Posted Jobs</h3>
+        <p>{{ jobs|length }}</p>
+        <a href="{{ url_for('recruiter_jobs') }}">View jobs</a>
+    </div>
+    <div class="admin-stat-card">
+        <h3>Applications</h3>
+        <p>{{ applications|length }}</p>
+        <a href="{{ url_for('recruiter_applications') }}">View applications</a>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header">Quick links</div>
+    <div class="card-body">
+        <a href="{{ url_for('recruiter_jobs') }}" style="margin-right: 1rem;">Jobs</a>
+        <a href="{{ url_for('recruiter_applications') }}">Applications</a>
+    </div>
+</div>
+{% endblock %}

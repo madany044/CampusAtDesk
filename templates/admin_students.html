@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block title %}Students - Admin - Job Board & Career Portal{% endblock %}
+
+{% block content %}
+<h1>Students</h1>
+<p class="admin-subtitle">{{ students|length }} student(s).</p>
+
+<!-- Branch filter bar -->
+<div style="margin-bottom: 1.5rem; display: flex; gap: 0.5rem; flex-wrap: wrap;">
+  <a href="{{ url_for('admin_students') }}"
+     style="padding: 0.45rem 1rem; border-radius: 999px; font-size: 0.8rem; font-weight: 600; text-decoration: none;
+            background: {{ 'var(--indigo)' if not selected_branch else 'var(--indigo-light)' }};
+            color: {{ 'white' if not selected_branch else 'var(--indigo)' }};
+            border: 2px solid var(--indigo);">
+    All
+  </a>
+  {% for b in branches %}
+  <a href="{{ url_for('admin_students', branch=b) }}"
+     style="padding: 0.45rem 1rem; border-radius: 999px; font-size: 0.8rem; font-weight: 600; text-decoration: none;
+            background: {{ 'var(--indigo)' if selected_branch == b else 'var(--indigo-light)' }};
+            color: {{ 'white' if selected_branch == b else 'var(--indigo)' }};
+            border: 2px solid var(--indigo);">
+    {{ b }}
+  </a>
+  {% endfor %}
+</div>
+
+<div class="card">
+    <div class="card-header">Students</div>
+    <div class="card-body">
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Branch</th>
+                    <th>Created</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in students %}
+                <tr>
+                    <td>{{ user.id }}</td>
+                    <td>{{ user.username }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>{{ user.branch or '—' }}</td>
+                    <td>{{ user.created_at.strftime('%Y-%m-%d %H:%M') if user.created_at else '-' }}</td>
+                </tr>
+                {% else %}
+                <tr>
+                    <td colspan="5">No students found.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<a href="{{ url_for('admin_dashboard') }}">Back to Dashboard</a>
+{% endblock %}
